@@ -302,7 +302,7 @@ class SolanaSnapper:
         """
         logging.getLogger('urllib3').setLevel(logging.WARNING)
         loglevel = logging.DEBUG if self.args.verbose else logging.INFO
-        logging.basicConfig(level=loglevel, format="%(asctime)s [%(levelname)s] %(message)s", handlers=[logging.FileHandler(f'{self.snapshotpath}/snapshot-finder.log'), logging.StreamHandler(sys.stdout)])
+        logging.basicConfig(level=loglevel, format="%(asctime)s [%(levelname)s] %(message)s", handlers=[logging.FileHandler(f'{self.snapshotpath}/snapshot.log'), logging.StreamHandler(sys.stdout)])
         self.logger = logging.getLogger(__name__)
 
     # === Function 'sizeconv' ===

@@ -1,4 +1,4 @@
-# SolanaSnapper
+# SolanaSnapper - Python Based Solana Snapshot Finder
 
 ![Python Version](https://img.shields.io/badge/python-3.12%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -77,7 +77,7 @@ Ensure `wget` is installed on your system:
 
 * * *
 
-#### Usage
+### Usage
 
 Run the script with default settings:
 
@@ -87,7 +87,7 @@ python main.py
 
 * * *
 
-#### Command-Line Arguments
+### Command-Line Arguments
 
 | Argument                     | Description                                                                 | Default Value                     |
 |------------------------------|-----------------------------------------------------------------------------|-----------------------------------|
@@ -112,7 +112,7 @@ python main.py
 
 * * *
 
-#### Example Commands
+### Example Commands
 
 1. Run with default settings but specify a custom snapshot path:
 
@@ -140,7 +140,7 @@ python main.py --min_download_speed 50 --max_latency 100
 
 * * *
 
-#### Output
+### Output
 
 - **Logs**: Written to both `snapshot-finder.log` in the snapshot path and the console.
 - **Snapshot Metadata**: Saved as `snapshot.json` in the snapshot path, containing:
@@ -152,7 +152,7 @@ python main.py --min_download_speed 50 --max_latency 100
 
 * * *
 
-#### Troubleshooting
+### Troubleshooting
 
 - **"wget utility not found"**: Ensure `wget` is installed and added to your system's PATH.
 - **Permission Errors**: Verify write permissions for the specified `snapshot_path`.
