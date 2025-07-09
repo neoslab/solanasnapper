@@ -573,7 +573,7 @@ class SolanaSnapper:
             if self.maxdownloadspeed is not None:
                 cmd.insert(2, f'--limit-rate={self.maxdownloadspeed}M')
             subprocess.run(cmd, stdout=subprocess.PIPE, universal_newlines=True)
-            self.logger.info(f'Rename the downloaded file {tmpsnap} --> {fname}')
+            self.logger.info(f'Rename the downloaded file to {fname}')
             os.rename(tmpsnap, f'{self.snapshotpath}/{fname}')
         except Exception as e:
             self.logger.error(f'Exception in download: {e}. Ensure wget is installed')
@@ -598,8 +598,7 @@ class SolanaSnapper:
             self.logger.info(f'RPC servers in total: {len(rpc_nodes)} | Current slot number: {self.timeslot}\n')
 
             if self.localsnapshot:
-                self.logger.info(
-                    f'Found full local snapshot {self.localsnapshot[0]} | {self.localsnapslot=}')
+                self.logger.info(f'Found full local snapshot {self.localsnapshot[0]} | {self.localsnapslot=}')
             else:
                 self.logger.info(f'No full local snapshots in {self.snapshotpath}')
 
@@ -609,9 +608,7 @@ class SolanaSnapper:
 
             self.pbar.close()
             self.logger.info(f'Found suitable RPCs: {len(self.jsondata["rpc_nodes"])}')
-            self.logger.info(f'Skipped RPCs: {self.discardtype=} | {self.discardlatency=} | '
-                             f'{self.discardslot=} | {self.discardversion=} | '
-                             f'{self.discardtimeout=} | {self.discarderrors=}')
+            self.logger.info(f'Skipped RPCs: {self.discardtype=} | {self.discardlatency=} | 'f'{self.discardslot=} | {self.discardversion=} | 'f'{self.discardtimeout=} | {self.discarderrors=}')
             if not self.jsondata["rpc_nodes"]:
                 self.logger.info(f'No snapshot nodes found matching parameters: {self.args.max_snapshot_age=}')
                 return 1
@@ -728,8 +725,7 @@ class SolanaSnapper:
 
             if self.timeslot is None:
                 self.nbrinitattempts += 1
-                self.logger.info(
-                    f'Failed to get current slot, retrying ({self.nbrinitattempts}/{self.nbrmaxattempts})')
+                self.logger.info(f'Failed to get current slot, retrying ({self.nbrinitattempts}/{self.nbrmaxattempts})')
                 time.sleep(self.waitretry)
                 continue
 
